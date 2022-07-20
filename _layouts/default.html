@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description"
+    content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="icon" href="{{ " /assets/images/favicon.png" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml" />
+
+  <link rel="stylesheet" href="{{ " /assets/css/main.css" | prepend: site.baseurl }}" />
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="{{ " /" | prepend: site.baseurl }}" class="navbar-item">
+          {{ site.name }}
+        </a>
+        {% if site.social.github %}
+        <a href="https://github.com/{{ site.social.github }}" class="navbar-item is-hidden-desktop">
+          <span class="icon">
+            Github
+          </span>
+        </a>
+        {% endif %}
+        {% if site.social.email %}
+        <a href="mailto:{{ site.social.email }}" class="navbar-item is-hidden-desktop">
+          <span class="icon">
+            Email
+          </span>
+        </a>
+        {% endif %}
+        {% if site.social.facebook %}
+        <a href="https://facebook.com/{{ site.social.facebook }}" class="navbar-item is-hidden-desktop">
+          <span class="icon">
+            Facebook
+          </span>
+        </a>
+        {% endif %}
+        {% if site.social.twitter %}
+        <a href="https://twitter.com/{{ site.social.twitter }}" class="navbar-item is-hidden-desktop">
+          <span class="icon">
+            Twitter
+          </span>
+        </a>
+        {% endif %}
+        {% if site.social.instagram %}
+        <a href="https://instagram.com/{{ site.social.instagram }}" class="navbar-item is-hidden-desktop">
+          <span class="icon">
+            Instagram
+          </span>
+        </a>
+        {% endif %}
+        {% if site.social.tumblr %}
+        <a href="https://{{ site.social.tumblr }}.tumblr.com" class="navbar-item is-hidden-desktop">
+          <span class="icon">
+            Tumblr
+          </span>
+        </a>
+        {% endif %}
+        <div class="navbar-burger burger" data-target="navMenubd-main">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div id="navMenubd-main" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="{{ " /" | prepend: site.baseurl }}" class="navbar-item {% if page.url == " /" %} is-active {% endif
+            %}">
+            Blog
+          </a>
+          <a href="{{ " /categories" | prepend: site.baseurl }}" class="navbar-item {% if page.url == " /categories/" %}
+            is-active {% endif %}">
+            Kategoriler
+          </a>
+        </div>
+        <div class="navbar-end">
+          {% if site.social.github %}
+          <a href="https://github.com/{{ site.social.github }}" class="navbar-item is-hidden-desktop-only">
+            <span class="icon">
+              Github
+            </span>
+          </a>
+          {% endif %}
+          {% if site.social.email %}
+          <a href="mailto:{{ site.social.email }}" class="navbar-item is-hidden-desktop-only">
+            <span class="icon">
+              Email
+            </span>
+          </a>
+          {% endif %}
+          {% if site.social.facebook %}
+          <a href="https://facebook.com/{{ site.social.facebook }}" class="navbar-item is-hidden-desktop-only">
+            <span class="icon">
+              Facebook
+            </span>
+          </a>
+          {% endif %}
+          {% if site.social.twitter %}
+          <a href="https://twitter.com/{{ site.social.twitter }}" class="navbar-item is-hidden-desktop-only">
+            <span class="icon">
+              Twitter
+            </span>
+          </a>
+          {% endif %}
+          {% if site.social.instagram %}
+          <a href="https://instagram.com/{{ site.social.instagram }}" class="navbar-item is-hidden-desktop-only">
+            <span class="icon">
+              Instagram
+            </span>
+          </a>
+          {% endif %}
+          {% if site.social.tumblr %}
+          <a href="https://{{ site.social.tumblr }}.tumblr.com" class="navbar-item is-hidden-desktop-only">
+            <span class="icon">
+              Tumblr
+            </span>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+    </nav>
+  </div>
+
+  {{ content }}
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. 
+          The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+        </p>
+        <p>
+          {% if site.social.github %}
+          <a class="icon" href="https://github.com/{{ site.social.github }}">
+            Github
+          </a>
+          {% endif %}
+          {% if site.social.email %}
+          <a class="icon" href="mailto:{{ site.social.email }}">
+            Email
+          </a>
+          {% endif %}
+          {% if site.social.facebook %}
+          <a class="icon" href="https://facebook.com/{{ site.social.facebook }}">
+            Facebook
+          </a>
+          {% endif %}
+          {% if site.social.twitter %}
+          <a class="icon" href="https://twitter.com/{{ site.social.twitter }}">
+            Twitter
+          </a>
+          {% endif %}
+          {% if site.social.instagram %}
+          <a class="icon" href="https://instagram.com/{{ site.social.instagram }}">
+            Instagram
+          </a>
+          {% endif %}
+          {% if site.social.tumblr %}
+          <a class="icon" href="https://{{ site.social.tumblr }}.tumblr.com">
+            Tumblr
+          </a>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

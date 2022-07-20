@@ -1,0 +1,38 @@
+name: Jekyll Bulma
+description: "Jekyll Bulma Theme, Bulma.io CSS Framework Jekyll Template for Developers"
+baseurl: 
+url:
+social:
+  github: 
+  email: 
+  facebook:
+  twitter: 
+  instagram:
+  tumblr:
+author:
+  name: Your Name
+  bio: A example of bio
+  email: yourname@example.com
+  image: #You can put a image to path of author
+  github: 
+  facebook: 
+  twitter: 
+  instagram:
+  tumblr:
+  show_on_post: true
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: "/:num/"
+markdown: kramdown
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - CNAME
+  - vendor
